@@ -9,13 +9,19 @@ export default class App extends React.Component {
         };
     }
 
+    handleIncrement = (event) => {
+        this.setState({
+            count: this.state.count + 1
+        });
+    }
+
     render() {
         return (
             <div className="parent">
                 <div className="count">
                     Number of clicks: {this.state.count}
                 </div>
-                <IncrementButton />
+                <IncrementButton handleIncrement={this.handleIncrement}/>
             </div>
         );
     }
